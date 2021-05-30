@@ -18,6 +18,6 @@ title= 'List of courses';
 getTitle(){
     return this.title;
 }
-courses = ["courses1", "course2", "course3"];
+courses;
 
 } 
