@@ -23,6 +23,8 @@ import { CoursesService } from './courses.service';
     <input (keyup.enter) = "onKeyUp()" />
     <br />
     <input #email (keyup.enter) = "printField(email.value)" /> 
+
+    <input [(ngModel)]="code" (keyup.enter)="printCode()" /> 
   `,
 })
 export class CoursesComponent {
@@ -48,8 +50,12 @@ export class CoursesComponent {
   onKeyUp(){
       console.log("enter is pressed");
   }
-  
   printField(email: any){
       console.log(email)
+  }
+
+  code = "qwerty";
+  printCode(){
+    console.log(this.code);
   }
 }
