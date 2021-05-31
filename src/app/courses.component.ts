@@ -11,6 +11,8 @@ import { CoursesService } from './courses.service';
         {{ course }}
       </li>
     </ul>
+    <img src = "{{imgUrl}}" />
+<img [src]= "imgUrl" />
   `,
 })
 export class CoursesComponent {
@@ -18,6 +20,7 @@ export class CoursesComponent {
   getTitle() {
     return this.title;
   }
+  imgUrl = "https://media-exp1.licdn.com/dms/image/C4E22AQFI7jj6uO-WaA/feedshare-shrink_800/0/1622372581327?e=1625097600&v=beta&t=xKnyWZh-OqVnBxP0mKBUH4UqKzGEoBcFF6HaFJkfJy8";
   courses;
   constructor(service: CoursesService) {
     // let service = new CoursesService(); // bekar way
