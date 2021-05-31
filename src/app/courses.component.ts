@@ -17,7 +17,9 @@ import { CoursesService } from './courses.service';
     <button class="btn btn-primary" [class.active]= "isActive">save</button>
     <button [style.backgroundColor] = "isActive ? 'blue': 'white'">Style check</button>
     <br />
-    <button (click) = "onClick($event)" >event test</button>
+    <div (click) = "divClick()">
+        <button (click) = "onClick($event)" >event test</button>
+    </div>
   `,
 })
 export class CoursesComponent {
@@ -33,6 +35,10 @@ export class CoursesComponent {
     this.courses = service.getCourses();
   }
   onClick($event: any){
+      $event.stopPropagation();
       console.log("button clicked", $event)
+  }
+  divClick(){
+      console.log("div clicked")
   }
 }
