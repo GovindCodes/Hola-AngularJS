@@ -21,6 +21,8 @@ import { CoursesService } from './courses.service';
         <button (click) = "onClick($event)" >event test</button>
     </div>
     <input (keyup.enter) = "onKeyUp()" />
+    <br />
+    <input #email (keyup.enter) = "printField(email.value)" /> 
   `,
 })
 export class CoursesComponent {
@@ -45,5 +47,9 @@ export class CoursesComponent {
 
   onKeyUp(){
       console.log("enter is pressed");
+  }
+  
+  printField(email: any){
+      console.log(email)
   }
 }
