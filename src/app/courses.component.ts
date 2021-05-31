@@ -23,8 +23,13 @@ import { CoursesService } from './courses.service';
     <input (keyup.enter) = "onKeyUp()" />
     <br />
     <input #email (keyup.enter) = "printField(email.value)" /> 
+    <br />
+    {{course.title | uppercase}} <br />
+    {{course.ratings | number:'1.1-1'}}<br />
+    {{course.reviews| number}}<br />
+    {{course.price | currency:'INR'}}<br />
+    {{course.releaseDate | date}}
 
-    <input [(ngModel)]="code" (keyup.enter)="printCode()" /> 
   `,
 })
 export class CoursesComponent {
@@ -57,5 +62,13 @@ export class CoursesComponent {
   code = "qwerty";
   printCode(){
     console.log(this.code);
+  }
+
+  course = {
+    title: "angular",
+    ratings: 4.3,
+    reviews: 12665236151,
+    price: 883,
+    releaseDate: new Date(2016, 3, 2)
   }
 }
