@@ -15,6 +15,7 @@ import { CoursesService } from './courses.service';
     <img [src]= "imgUrl" />
     <br />
     <button class="btn btn-primary" [class.active]= "isActive">save</button>
+    <button [style.backgroundColor] = "isActive ? 'blue': 'white'">Style check</button>
   `,
 })
 export class CoursesComponent {
@@ -24,7 +25,7 @@ export class CoursesComponent {
   }
   imgUrl = "https://media-exp1.licdn.com/dms/image/C4E22AQFI7jj6uO-WaA/feedshare-shrink_800/0/1622372581327?e=1625097600&v=beta&t=xKnyWZh-OqVnBxP0mKBUH4UqKzGEoBcFF6HaFJkfJy8";
   courses;
-  isActive = true;
+  isActive = false;
   constructor(service: CoursesService) {
     // let service = new CoursesService(); // bekar way
     this.courses = service.getCourses();
