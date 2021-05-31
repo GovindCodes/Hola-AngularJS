@@ -20,6 +20,7 @@ import { CoursesService } from './courses.service';
     <div (click) = "divClick()">
         <button (click) = "onClick($event)" >event test</button>
     </div>
+    <input (keyup.enter) = "onKeyUp()" />
   `,
 })
 export class CoursesComponent {
@@ -40,5 +41,9 @@ export class CoursesComponent {
   }
   divClick(){
       console.log("div clicked")
+  }
+
+  onKeyUp(){
+      console.log("enter is pressed");
   }
 }
