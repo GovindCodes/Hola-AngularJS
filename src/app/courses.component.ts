@@ -16,6 +16,8 @@ import { CoursesService } from './courses.service';
     <br />
     <button class="btn btn-primary" [class.active]= "isActive">save</button>
     <button [style.backgroundColor] = "isActive ? 'blue': 'white'">Style check</button>
+    <br />
+    <button (click) = "onClick($event)" >event test</button>
   `,
 })
 export class CoursesComponent {
@@ -29,5 +31,8 @@ export class CoursesComponent {
   constructor(service: CoursesService) {
     // let service = new CoursesService(); // bekar way
     this.courses = service.getCourses();
+  }
+  onClick($event: any){
+      console.log("button clicked", $event)
   }
 }
